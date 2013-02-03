@@ -1,0 +1,120 @@
+roman@home tarantool-js/test/var $ ../../src/box/tarantool_box 
+2013-02-03 20:20:08.195 [12831] 1/sched D> v8 TLS run-time hack works - all 3 keys have been detected
+2013-02-03 20:20:08.196 [12831] 1/sched D> v8 pthread's TLS <-> fiber's FLS mapping:
+2013-02-03 20:20:08.196 [12831] 1/sched D>  0 => 0
+2013-02-03 20:20:08.196 [12831] 1/sched D>  1 => 1
+2013-02-03 20:20:08.196 [12831] 1/sched D>  2 => 2
+2013-02-03 20:20:08.196 [12831] 1/sched I> space 0 successfully configured
+2013-02-03 20:20:08.196 [12831] 1/sched I> recovery start
+2013-02-03 20:20:08.196 [12831] 1/sched I> recover from `./00000000000000000001.snap'
+2013-02-03 20:20:08.196 [12831] 1/sched D> log_io_cursor_next: marker:0x00000000BA0BABED/4
+2013-02-03 20:20:08.196 [12831] 1/sched D> eof while looking for magic
+2013-02-03 20:20:08.196 [12831] 1/sched I> snapshot recovered, confirmed lsn: 1
+2013-02-03 20:20:08.196 [12831] 1/sched D> log_io_cursor_next: marker:0x00000000BA0BABED/4
+2013-02-03 20:20:08.196 [12831] 1/sched D> magic found at 0x0000000b
+2013-02-03 20:20:08.196 [12831] 1/sched D> read row v11 success lsn:2
+2013-02-03 20:20:08.196 [12831] 1/sched D> tuple_alloc(15) = 0x7f06e3800060
+2013-02-03 20:20:08.196 [12831] 1/sched D> next_lsn(0x7f06ebc1b178, 2
+2013-02-03 20:20:08.196 [12831] 1/sched D> wal_write lsn=2
+2013-02-03 20:20:08.196 [12831] 1/sched D> set_lsn(0x7f06ebc1b178, 2
+2013-02-03 20:20:08.196 [12831] 1/sched D> log_io_cursor_next: marker:0x00000000BA0BABED/4
+2013-02-03 20:20:08.196 [12831] 1/sched D> eof while looking for magic
+2013-02-03 20:20:08.196 [12831] 1/sched I> done `./00000000000000000002.xlog' confirmed_lsn: 2
+2013-02-03 20:20:08.196 [12831] 1/sched I> recover from `./00000000000000000003.xlog'
+2013-02-03 20:20:08.196 [12831] 1/sched D> log_io_cursor_next: marker:0x00000000BA0BABED/4
+2013-02-03 20:20:08.196 [12831] 1/sched D> magic found at 0x0000000b
+2013-02-03 20:20:08.196 [12831] 1/sched D> read row v11 success lsn:3
+2013-02-03 20:20:08.196 [12831] 1/sched D> tuple_alloc(10) = 0x7f06e38000a0
+2013-02-03 20:20:08.196 [12831] 1/sched D> next_lsn(0x7f06ebc1b178, 3
+2013-02-03 20:20:08.196 [12831] 1/sched D> wal_write lsn=3
+2013-02-03 20:20:08.196 [12831] 1/sched D> set_lsn(0x7f06ebc1b178, 3
+2013-02-03 20:20:08.196 [12831] 1/sched D> log_io_cursor_next: marker:0x00000000BA0BABED/4
+2013-02-03 20:20:08.196 [12831] 1/sched D> eof while looking for magic
+2013-02-03 20:20:08.197 [12831] 1/sched I> done `./00000000000000000003.xlog' confirmed_lsn: 3
+2013-02-03 20:20:08.197 [12831] 1/sched I> WALs recovered, confirmed lsn: 3
+2013-02-03 20:20:08.197 [12831] 1/sched I> building secondary indexes
+2013-02-03 20:20:08.197 [12831] 1/sched I> bound to port 33013
+2013-02-03 20:20:08.197 [12831] 1/sched D> wal_writer_thread: locking &writer->mutex
+2013-02-03 20:20:08.197 [12831] 1/sched I> bound to port 33014
+2013-02-03 20:20:08.197 [12831] 1/sched I> bound to port 33015
+2013-02-03 20:20:08.197 [12831] 101/js-init-library D> js enable
+2013-02-03 20:20:08.197 [12831] 101/js-init-library D> js create locker
+2013-02-03 20:20:08.198 [12831] 101/js-init-library I> Loading new JS module 'init' from './init.js'
+2013-02-03 20:20:08.198 [12831] 101/js-init-library I> Loading new JS module 'console' from './console.js'
+2013-02-03 20:20:08.198 [12831] 101/js-init-library I> Hello from JS
+2013-02-03 20:20:08.198 [12831] 101/js-init-library I> stub.add => 10
+2013-02-03 20:20:08.198 [12831] 101/js-init-library I> stub.add => 25
+2013-02-03 20:20:08.198 [12831] 101/js-init-library I> Loading new JS module 'node_util' from './node_util.js'
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> node.js module test: [object Object] util.format 1
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> f.id     = 102
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> f.name   = js
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> f.state  = CREATED
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber pause hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js create unlocker
+2013-02-03 20:20:08.201 [12831] 1/sched C> log level 5
+2013-02-03 20:20:08.201 [12831] 1/sched C> entering event loop
+2013-02-03 20:20:08.201 [12831] 102/js D> js enable
+2013-02-03 20:20:08.201 [12831] 102/js D> js create locker
+2013-02-03 20:20:08.201 [12831] 102/js D> js fiber resume hook
+2013-02-03 20:20:08.201 [12831] 102/js D> fiber js body
+2013-02-03 20:20:08.201 [12831] 102/js I> In Fiber: 102
+2013-02-03 20:20:08.201 [12831] 102/js D> Before yield
+2013-02-03 20:20:08.201 [12831] 102/js D> js fiber pause hook
+2013-02-03 20:20:08.201 [12831] 102/js D> js create unlocker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber resume hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js delete unlocker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> f.resume =>0
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber pause hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js create unlocker
+2013-02-03 20:20:08.201 [12831] 102/js D> js fiber resume hook
+2013-02-03 20:20:08.201 [12831] 102/js D> js delete unlocker
+2013-02-03 20:20:08.201 [12831] 102/js D> After yield
+2013-02-03 20:20:08.201 [12831] 102/js D> Before yield
+2013-02-03 20:20:08.201 [12831] 102/js D> js fiber pause hook
+2013-02-03 20:20:08.201 [12831] 102/js D> js create unlocker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber resume hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js delete unlocker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> f.resume =>11
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber pause hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js create unlocker
+2013-02-03 20:20:08.201 [12831] 102/js D> js fiber resume hook
+2013-02-03 20:20:08.201 [12831] 102/js D> js delete unlocker
+2013-02-03 20:20:08.201 [12831] 102/js D> After yield
+2013-02-03 20:20:08.201 [12831] 102/js D> js fiber pause hook
+2013-02-03 20:20:08.201 [12831] 102/js D> js create unlocker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber resume hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js delete unlocker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> last resume
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber pause hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js create unlocker
+2013-02-03 20:20:08.201 [12831] 102/js D> js fiber resume hook
+2013-02-03 20:20:08.201 [12831] 102/js D> js delete unlocker
+2013-02-03 20:20:08.201 [12831] 102/js D> js fiber pause hook
+2013-02-03 20:20:08.201 [12831] 102/js D> js create unlocker
+2013-02-03 20:20:08.201 [12831] 102/js D> js fiber stop hook
+2013-02-03 20:20:08.201 [12831] 102/js D> js delete unlocker
+2013-02-03 20:20:08.201 [12831] 102/js D> js delete locker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber resume hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js delete unlocker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> f.resume =>48
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> f.state  = STOPPED
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> buffer[0]     = 0
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> buffer[1023]  = -1
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> buffer[1024]  = undefined
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> List of exported methods:
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I>  test
+2013-02-03 20:20:08.201 [12831] 101/js-init-library I> End of the list.
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber pause hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js create unlocker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js fiber stop hook
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js delete unlocker
+2013-02-03 20:20:08.201 [12831] 101/js-init-library D> js delete locker
+2013-02-03 20:20:08.202 [12831] 1/sched D> js idle
+2013-02-03 20:20:08.203 [12831] 1/sched D> fiber_js_gc: fid=102
+2013-02-03 20:20:08.203 [12831] 1/sched D> js idle
+2013-02-03 20:20:08.203 [12831] 1/sched D> js idle
+2013-02-03 20:20:08.204 [12831] 1/sched D> js idle
+2013-02-03 20:20:08.204 [12831] 1/sched D> js idle
+2013-02-03 20:20:08.205 [12831] 1/sched D> js idle
+2013-02-03 20:20:08.206 [12831] 1/sched D> js idle
+2013-02-03 20:20:08.206 [12831] 1/sched D> js idle
