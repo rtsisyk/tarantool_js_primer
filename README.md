@@ -38,7 +38,7 @@ Compile **Tarantool/Box** with JavaScript support
 Clone content of **this gist** to the `test/var` directory
 ```
 ~/tarantool_js $ cd test
-~/tarantool_js $ git clone https://gist.github.com/XXXX.git var
+~/tarantool_js $ git clone https://gist.github.com/4702667 var
 ```
 
 Run Tarantool/Box from the `test/var/` directory
