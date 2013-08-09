@@ -13,12 +13,19 @@ Installation
 Get && install **libv8** library with development files:
 
 ```
-debian# apt-get install libv8-dev
-redhat# yum install v8-devel
-gentoo# emerge dev-lang/v8
+~ $ svn checkout http://v8.googlecode.com/svn/trunk/ v8
+~ $ cd v8
+~/v8 $ make dependencies
+~/v8 $ make native werror=no library=shared -j8
+~/v8 $ install -o root include/* /usr/local/include
+~/v8 $ install -o root out/native/lib.target/libv8.so /usr/local/lib
 ```
 
-version 3.14.5.3 and svn bleeding edge rev.13579 are tested.
+Check http://code.google.com/p/v8/wiki/BuildingWithGYP
+for more details.
+
+Version 3.20.14 is tested (head ChangeLog -n 1).
+Version older than 3.19 is now compatible due to V8 API changes.
 
 Clone **tarantool-js** repository:
 ```
@@ -38,7 +45,7 @@ Compile **Tarantool/Box** with JavaScript support
 Clone content of **this gist** to the `test/var` directory
 ```
 ~/tarantool_js $ cd test
-~/tarantool_js $ git clone https://gist.github.com/4702667 var
+~/tarantool_js $ git clone https://gist.github.com/4702667.git var
 ```
 
 Run Tarantool/Box from the `test/var/` directory
@@ -106,7 +113,6 @@ Built-in modules
 + **platform** - platform-specific things needed for implementation
 + **require** - require functions itself
 + **fiber** module for working with **Tarantool/Box** fibers
-+ **array** - JavaScript typed arrays
 + **box** - interface to the Tarantool/Box transaction processor (is not ready yet)
 
 Module 'require'
@@ -138,42 +144,33 @@ Example:
 ```
 fiber = require('fiber')
 
-function body1(arg)
+function body1(msg, count)
 {
-    console.log("In Fiber: " + fiber.self().id);
+    console.log("In Fiber: " + this.id);
 
     var k = 0;
-    for (var i = 0; i < arg; i++) {
-        console.debug("Before yield");
-        k = fiber.yield(i + k);
-        console.debug("After yield");
+    for (var i = 0; i < count; i++) {
+        console.log("Hello from fiber: " + msg);
+        fiber.sleep(1.0)
     }
 
     return 48;
 }
 
-f = new fiber(body1)
-console.log("f.id     = " + f.id);
-console.log("f.name   = " + f.name);
-console.log("f.state  = " + f.state);
-console.log("f.resume =>" + f.resume(2));
-console.log("f.resume =>" + f.resume(10));
-console.log("f.resume =>" + f.resume(15));
-console.log("f.state  = " + f.state);
-
-fiber.sleep(1.0)
+f1 = new fiber(body1, "Hello", 10)
+f2 = new fiber(body1, "Hey", 5)
+console.log("f1.id = " + f1.id)
 ```
 
-Module 'array'
---------------
+TypedArray (built-in module)
+----------------------------
 
 See https://developer.mozilla.org/en-US/docs/JavaScript/Typed_arrays
 
 Example:
 ```
-array = require('array');
 
-buffer = array.Int8Array(1024)
+buffer = new Int8Array(1024)
 buffer[0] = 2;
 ```
 

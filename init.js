@@ -58,36 +58,29 @@ console.log("node.js module test: " + util + " " + util.format("%s %d", "util.fo
  */
 fiber = require('fiber')
 
-function body1(arg)
+function body1(msg, count)
 {
-    console.log("In Fiber: " + fiber.self().id);
+    console.log("In Fiber: " + this.id);
 
     var k = 0;
-    for (var i = 0; i < arg; i++) {
-        console.debug("Before yield");
-        k = fiber.yield(i + k);
-        console.debug("After yield");
+    for (var i = 0; i < count; i++) {
+        console.log("Hello from fiber: " + msg);
+        fiber.sleep(1.0)
     }
 
     return 48;
 }
 
-f = new fiber(body1)
-console.log("f.id     = " + f.id);
-console.log("f.name   = " + f.name);
-console.log("f.state  = " + f.state);
-console.log("f.resume =>" + f.resume(2));
-console.log("f.resume =>" + f.resume(10));
-console.log("f.resume =>" + f.resume(15));
-console.log("f.state  = " + f.state);
+f1 = new fiber(body1, "Hello", 10)
+f2 = new fiber(body1, "Hey", 5)
+console.log("f1.id = " + f1.id)
 
 /*
  * Array
  * @see https://developer.mozilla.org/en-US/docs/JavaScript/Typed_arrays
  */
-array = require('array');
 
-buffer = array.Int8Array(1024)
+buffer = new Int8Array(1024)
 buffer[0] = 0;
 buffer[1023] = 1023;
 buffer[1024] = 1024;
