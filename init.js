@@ -46,10 +46,11 @@ exports.test = function(a, b) {
     return a + b;
 }
 
+
 /* 
  * Try to load node.js module
  */
-util = require('node_util')
+var util = require('node_util')
 
 console.log("node.js module test: " + util + " " + util.format("%s %d", "util.format", 1));
 
@@ -88,3 +89,5 @@ buffer[1024] = 1024;
 console.log("buffer[0]     = " + buffer[0])
 console.log("buffer[1023]  = " + buffer[1023])
 console.log("buffer[1024]  = " + buffer[1024])
+
+console.error('Error message test')

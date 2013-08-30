@@ -19,7 +19,8 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-process = {}; /* is not implemented yet */
+var process = {}
+var global = {}
 var formatRegExp = /%[sdj%]/g;
 exports.format = function(f) {
   if (typeof f !== 'string') {
